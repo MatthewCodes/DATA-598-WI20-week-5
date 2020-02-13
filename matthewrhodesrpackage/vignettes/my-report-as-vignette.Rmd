@@ -1,0 +1,33 @@
+---
+title: "my-report-as-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-report-as-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: example.bib
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(matthewrhodesrpackage)
+```
+
+```{r, my-fig, fig.cap=" Picture of a delicious burger"}
+library(here)
+knitr::include_graphics(here("Burger.jpg"))
+
+```
+See Figure \@ref(fig:my-fig)
+
+```{r, child-code, eval=TRUE}
+```
+
+References:
+[@cline1992economics]
