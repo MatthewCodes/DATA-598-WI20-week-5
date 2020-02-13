@@ -15,16 +15,27 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(matthewrhodesrpackage)
+```{r, setup}
+knitr::read_chunk("child.R")
+library(tidyverse)
 ```
 
-```{r, my-fig, fig.cap=" Picture of a delicious burger"}
+```{r, my-fav-burger, fig.cap=" Picture of a delicious burger"}
 library(here)
 knitr::include_graphics(here("Burger.jpg"))
 
 ```
-See Figure \@ref(fig:my-fig)
+
+See Figure \@ref(fig:my-fav-burger) for a picture of a burger
+
+
+See Figure \@ref(fig:cars-plot).
+
+```{r cars-plot, fig.cap="The cars data.", echo=FALSE}
+par(mar = c(4, 4, .2, .1))
+plot(cars)  # a scatterplot
+```
+
 
 ```{r, child-code, eval=TRUE}
 ```
